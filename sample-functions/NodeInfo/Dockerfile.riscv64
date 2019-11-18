@@ -1,0 +1,15 @@
+FROM carlosedp/faas-debianfunction:riscv64
+
+USER root
+
+RUN apt update && apt-get install -y nodejs nodejs-npm
+
+USER app
+
+COPY package.json .
+COPY main.js .
+
+RUN npm i
+
+ENV fprocess="node main.js"
+CMD ["fwatchdog"]

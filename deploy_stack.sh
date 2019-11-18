@@ -60,6 +60,9 @@ case "$arch" in
 "aarch64") echo "Deploying OpenFaaS core services for ARM64"
           composefile="docker-compose.arm64.yml"
           ;;
+"riscv64") echo "Deploying OpenFaaS core services for Riscv64"
+          composefile="docker-compose.riscv64.yml"
+          ;;
 *) echo "Deploying OpenFaaS core services"
    composefile="docker-compose.yml"
    ;;
